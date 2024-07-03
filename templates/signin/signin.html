@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %} {% block content %}
+    <div class="container">
+        <p class="text">SIGN IN</p>
+        <form class="login-form" onSubmit={submitHandler}>
+          <div class="input">
+            <input type="text" placeholder="UserName" ref={InputRefName} />
+            <input
+              type="password"
+              placeholder="Password"
+              ref={passwordInputRef}
+            />
+          </div>
+          <div class="button">
+            <button class="join" type="submit">
+              Login
+            </button>
+          </div>
+        </form>
+    </div>
+{% endblock %}
