@@ -1,3 +1,8 @@
 {% extends 'base.html' %} {% block content %}
-<h1> Home </h1>
+    <h1> Home </h1>
+    {% if item %}
+        {% for it in item %}
+            <h1>{{ it.item_name }}</h1>
+        {% endfor %}
+    {% endif %}
 {% endblock %}
