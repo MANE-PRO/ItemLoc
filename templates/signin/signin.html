@@ -2,9 +2,9 @@
 {% extends 'base.html' %} {% block content %}
     <div class="container">
         <p class="text">SIGN IN</p>
-        <form class="login-form" onSubmit={submitHandler}>
+        <form class="login-form" action = "{% url 'index' %}">
           <div class="input">
-            <input type="text" placeholder="UserName" ref={InputRefName} />
+            <input type="text" placeholder="UserName" name = "username" ref={InputRefName} />
             <input
               type="password"
               placeholder="Password"

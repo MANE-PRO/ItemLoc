@@ -2,7 +2,7 @@ from django.db import models
 from signin.models import Profile
 
 class Item(models.Model):
-    email = models.ForeignKey(Profile, on_delete = models.CASCADE)
+    prof = models.ForeignKey(Profile, on_delete = models.CASCADE)
     item_name = models.CharField(max_length=100)
     item_loc = models.CharField(max_length=100, blank = True)
     precise_loc = models.TextField(blank= True)
