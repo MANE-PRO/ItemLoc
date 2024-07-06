@@ -1,2 +1,6 @@
+{% extends 'home/base.html' %} {% block content %}
 <h1>{{ item.item_name }}</h1>
+{% if item.img %}
 <img src = "{{ item.img.url }}" alt = "none">
+{% endif %}
+{% endblock %}

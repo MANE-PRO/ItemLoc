@@ -1,0 +1,16 @@
+<nav class="navbar">
+    <div class="nav-links">
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'createitem' %}">Create Item</a>
+    </div>
+    <div class="search-container">
+        
+        <form action = "{% url 'index' %}">
+            <input type="text" name = "itemname" value="{{value.itemname}}" placeholder="Search...">
+            <button type="submit"><img class = "search-icon" src="../../static/icons/search.png"></button>
+        </form>
+  
+    </div>
+    <button class="logout-btn"><a href  = "{% url 'logout' %}"><img class = "logout-icon" src="../../static/icons/logout.png"></a></button>
+</nav>
+

@@ -1,0 +1,9 @@
+{% extends 'home/base.html' %} {% block content %}
+    <div class="container">
+        <p class="text">Create Item</p>
+        <form enctype="multipart/form-data" method="post" action="{% url 'createitem' %}">
+            {% csrf_token %}
+            {{form}}
+        <input type = "submit">
+    </div>
+{% endblock %}
