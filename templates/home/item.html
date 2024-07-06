@@ -1,6 +1,33 @@
 {% extends 'home/base.html' %} {% block content %}
-<h1>{{ item.item_name }}</h1>
-{% if item.item_image %}
-<img src = "{{ item.item_image.url }}" alt = "none">
-{% endif %}
+<main>
+    <section class="product-info">
+        <h2>Product Information</h2>
+        <div class = "info-container">
+            {% if item.item_image %}
+            <img src = "{{ item.item_image.url }}" alt = "none">
+            {% else %}
+            <img src = "../../static/loginpage/background.jpg" alt = "Net Lag">
+            {% endif %}
+            <h2>{{item.item_name}}</h2>
+            {% if item.item_location %}
+            <div>
+                <label for = "item-loc">Location: </label>
+                <p id = "item-loc">{{item.item_location}}</p>
+            </div>
+            {% endif %}
+            {% if item.precise_loc %}
+            <div>
+                <label for = "prec-loc">Precise Location: </label>
+                <p id = "prec-loc">{{item.precise_loc}}</p>
+            </div>
+            {% endif %}
+            {% if item.item_desc %}
+            <div>
+                <label for = "prec-loc">Item Description: </label>
+                <p id = "prec-loc">{{item.item_desc}}</p>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+</main>
 {% endblock %}
