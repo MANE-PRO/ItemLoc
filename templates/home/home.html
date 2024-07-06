@@ -1,10 +1,36 @@
 {% extends 'home/base.html' %} {% block content %}
-    <h1> Home </h1>
-    
-    {% if item %}
-        {% for it in item %}
-            <h1>{{ it.item_name }}</h1>
-            <a href  = "{% url 'item' it.id %}">Touch</a>
-        {% endfor %}
-    {% endif %}
+    <main>
+        <section class="product-gallery">
+            {% if item %}
+            <h2>Locate Your Items!</h2>
+            <div class="products">
+            {% for it in item %}
+                <div class="product-card">
+                    {% if it.img %}
+                    <img src="{{it.img.url}}" alt="Product 1">
+                    {% else %}
+                    <img src="../../static/loginpage/background.jpg" alt="None">
+                    {% endif %}
+                    <h3>{{it.item_name}}</h3>
+                    {% if it.item_loc %}
+                    <p>Item Location: {{ it.item_loc }}</p>
+                    {% else %}
+                    <p>No Location Info!</p>
+                    {% endif %}
+                    <div class="button">
+                        <a href = "{% url 'item' it.id %}">
+                            <button class = "btn">
+                                More Info
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+            {% else %}
+            <h2>No Items to Locate!</h2>
+            <p class="smalltext">Create one <a href="{% url 'createitem' %}">here</a>!</p>
+            {% endif %}
+        </section>
+    </main>
 {% endblock %}
