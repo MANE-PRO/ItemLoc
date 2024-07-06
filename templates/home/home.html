@@ -6,14 +6,14 @@
             <div class="products">
             {% for it in item %}
                 <div class="product-card">
-                    {% if it.img %}
-                    <img src="{{it.img.url}}" alt="Product 1">
+                    {% if it.item_image %}
+                    <img src="{{it.item_image.url}}" alt="Product 1">
                     {% else %}
                     <img src="../../static/loginpage/background.jpg" alt="None">
                     {% endif %}
                     <h3>{{it.item_name}}</h3>
-                    {% if it.item_loc %}
-                    <p>Item Location: {{ it.item_loc }}</p>
+                    {% if it.item_location %}
+                    <p>Item Location: {{ it.item_location}}</p>
                     {% else %}
                     <p>No Location Info!</p>
                     {% endif %}
