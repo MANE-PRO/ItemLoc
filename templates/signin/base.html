@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "{% static 'css/signin.css' %}">
+    <link rel = "stylesheet" href = "{% static 'css/alert.css' %}">
     <title>Item Locator</title>
 </head>
 <body class = "body">
+    {% include 'signin/_alert.html' %}
     {% block content %} {% endblock %}
+    <script src="{% static 'js/alert.js' %}"></script>
 </body>
 </html>

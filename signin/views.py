@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
+from django.contrib import messages
 # Create your views here.
 def signin(request):
     if request.method == 'POST':
@@ -11,7 +12,10 @@ def signin(request):
             auth.login(request, user)
             return redirect('index')
         else:
-            return redirect('signup')
+            if User.objects.filter(username = username).exists():
+                messages.add_message(request, messages.ERROR, "Wrong Password", fail_silently=True)
+            else:
+                messages.add_message(request, messages.ERROR, "Username Not found. Please Sign Up!", fail_silently=True)
     return render(request, 'signin/signin.html')
 def signup(request):
     if request.method == 'POST':
