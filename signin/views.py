@@ -26,6 +26,9 @@ def signup(request):
             user = User.objects.create_user(username=username, email = email, password= password)
             auth.login(request, user)
             return redirect('index')
+        else:
+            messages.add_message(request, messages.ERROR, "Username Already Exists!", fail_silently=True)
+            return redirect('signin')
     return render(request, 'signin/signup.html')
 def logout(request):
     auth.logout(request)

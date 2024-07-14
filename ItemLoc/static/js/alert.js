@@ -1,3 +1,4 @@
+
 function showAlert() {
     document.getElementById("alertBox").classList.add("show");
 }
@@ -5,3 +6,4 @@ function showAlert() {
 function dismissAlert() {
     document.getElementById("alertBox").classList.remove("show");
 }
+

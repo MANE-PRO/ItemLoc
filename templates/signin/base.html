@@ -11,6 +11,6 @@
 <body class = "body">
     {% include 'signin/_alert.html' %}
     {% block content %} {% endblock %}
-    <script src="{% static 'js/alert.js' %}"></script>
+    {% block extrascripts %}{% endblock %}
 </body>
 </html>

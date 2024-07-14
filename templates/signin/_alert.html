@@ -1,9 +1,12 @@
+{% load static %}
 {% if messages %}
 <div class="alert show" id="alertBox">
     {% for message in messages %}
     <span class="closebtn" onclick="dismissAlert()">&times;</span> 
-        {{ message }}
+       <span class = "txt">{{ message }}</span> 
     {% endfor %}
 </div>
 {% endif %}
-
+{% block extrascripts %}
+<script type = "text/JavaScript"src="{% static 'js/alert.js' %}"></script>
+{% endblock %}
